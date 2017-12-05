@@ -14,4 +14,9 @@ class BankAccount
     {
         return $this->balance;
     }
+
+    public function deposit(int $amount): void
+    {
+        $this->balance += $amount;
+    }
 }
