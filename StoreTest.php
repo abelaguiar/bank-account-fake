@@ -10,5 +10,6 @@ class StoreTest extends TestCase
 
         $this->assertEquals(5, $store->products()->count());
         $this->assertInstanceOf(Collection::class, $store->products);
+        $this->assertInstanceOf(Product::class, $store->products->first());
     }
 }
