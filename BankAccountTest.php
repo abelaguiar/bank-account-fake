@@ -38,4 +38,13 @@ class BankAccountTest extends PHPUnit_Framework_Festcase
 
         $this->assertEquals(75, $balance);
     }
+
+    /** @test */
+    function withdraw_more_than_the_available_throws_an_exception()
+    {
+        $this->expectException(InsuficientBalanceException::class);
+
+        $account = new BankAccount(100);
+        $account->withdrawal(200);
+    }
 }
