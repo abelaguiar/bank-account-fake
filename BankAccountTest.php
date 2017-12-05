@@ -19,4 +19,14 @@ class BankAccountTest extends PHPUnit_Framework_Festcase
 
         $this->assertEquals(100, $balance);
     }
+
+    /** @test */
+    function it_can_make_a_deposit_to_the_account()
+    {
+        $account = new BankAccount(100);
+        $account->deposit(50);
+        $balance = $account->getBalance();
+
+        $this->assertEquals(150, $balance);
+    }
 }
