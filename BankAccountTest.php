@@ -29,4 +29,13 @@ class BankAccountTest extends PHPUnit_Framework_Festcase
 
         $this->assertEquals(150, $balance);
     }
+
+    /** @test */
+    function it_can_perform_a_withdrawal()
+    {
+        $account = new BankAccount(100);
+        $account->withdrawal(25);
+
+        $this->assertEquals(75, $balance);
+    }
 }
