@@ -22,6 +22,10 @@ class BankAccount
 
     public function withdrawal(int $amount): void
     {
+        if ($this->balance < $amount) {
+            throw new InsuficientBalanceException;
+        }
+
         $this->balance -= $amount;
     }
 }
