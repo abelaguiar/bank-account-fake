@@ -22,10 +22,15 @@ class BankAccount
 
     public function withdrawal(int $amount): void
     {
+        $this->validateWithdraw($amount);
+
+        $this->balance -= $amount;
+    }
+
+    private function validateWithdraw(int $amount)
+    {
         if ($this->balance < $amount) {
             throw new InsuficientBalanceException;
         }
-
-        $this->balance -= $amount;
     }
 }
